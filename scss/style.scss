@@ -1,0 +1,24 @@
+// Default
+@import "_reset.scss";
+@import "_var.scss";
+
+// Font
+@import "_fonts.scss";
+
+//Block
+@import "_header.scss";
+@import "_payment.scss";
+@import "_special.scss";
+@import "_company.scss";
+@import "_backed.scss";
+@import "_footer.scss";
+
+
+
+.container {
+   max-width: $containerWidth;
+   margin: 0 auto;
+   padding: 0 20px;
+   
+   font-family: 'OpenSans';
+}

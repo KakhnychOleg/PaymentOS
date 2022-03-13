@@ -1,0 +1,145 @@
+.block-footer {
+   padding: 65px 0 95px 0;
+   background: $grayDark;
+   color: #fff;
+
+   @media (max-width: $breakpoint768) {
+      padding: 30px 0 40px 0;
+   }
+}
+.footer {
+   display: flex;
+   justify-content: space-between;
+   @media (max-width: $breakpoint768) {
+      flex-wrap: wrap;
+   }
+   
+   // .footer__item
+   &__item {
+      max-width: 345px;
+      display: flex;
+      flex-direction: column;
+      
+      @media (max-width: $breakpoint768) {
+         flex: 0 1 100%;
+         max-width: 100%;
+      }
+   }
+
+   // .footer__logo
+   &__logo {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 18px;
+   }
+
+   // .footer__text
+   &__text {
+      margin-top: 20px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+   }
+
+   // .footer__copy
+   &__copy {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      color: #D6D5DF;
+      margin-top: auto;
+      
+      @media (max-width: $breakpoint768) {
+         margin-top: 20px;
+      }
+   }
+
+   // .footer__form-title
+   &__form-title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 16px;
+      @media (max-width: $breakpoint768) {
+         margin-top: 30px;
+      }
+   }
+
+   // .footer__social
+   &__social {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+   }
+
+   // .footer__link
+   &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: $grayLight;
+      border-radius: 100%;
+
+      &:hover {
+         path {
+            fill: $blue;
+            transition: .3s all ease;
+         }
+      }
+   }
+}
+.form {
+   margin: 10px 0;
+
+   // .form__label
+   &__label {
+      background: #fff;
+      position: relative;
+      display: flex;
+      border-radius: 4px;
+   }
+
+   // .form__input
+   &__input {
+      padding: 20px 60px 20px 20px;
+      outline: none;
+      border-radius: 4px;
+      
+      @media (max-width: $breakpoint768) {
+         padding: 15px 60px 15px 15px;
+      }
+   }
+
+   // .form__btn
+   &__btn {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      bottom: 8px;
+      background: $blue;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: $breakpoint768) {
+         width: 32px;
+         height: 32px;
+      }
+
+      &:hover {
+         background: $blueDark;
+         transition: .3s ease;
+      }
+   }
+
+   // .form__text
+   &__text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+   }
+}

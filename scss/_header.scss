@@ -1,0 +1,133 @@
+.navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 72px;
+   // background: #999;
+
+   .logo {
+      font-weight: bold;
+      font-size: 20px;
+   }
+   
+   .menu {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      font-size: 14px;
+      // .menu__item
+      &__item {
+         &:last-child {
+            background: $blue;
+            border-radius: 4px;
+            padding: 13px 20px;
+            &:hover {
+               background: $blueDark;
+               transition: all .3s ease;
+            }
+            a {
+               color: #fff;
+            }
+         }
+      }
+      // .menu__item-link
+      &__item-link {
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         color: $grayLight;
+         &:hover {
+            color: $blue;
+            transition: all .3s ease;
+            path {
+               fill: $blue;
+               transition: all .3s ease;
+            }
+         }
+      }
+      &__burger {
+         display: none;
+
+         @media (max-width: $breakpoint768) {
+            display: block;
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 20px;
+            z-index: 3;
+
+            &::after,
+            &::before,
+            & span {
+               position: absolute;
+               content: ' ';
+               width: 30px;
+               height: 2px;
+               background: #000;
+               left: 0;
+               transition: all .3s ease;
+            }
+            &::after {
+               bottom: 0;
+            }
+            &::before {
+               top: 0;
+            }
+            & span {
+               top: 9px;
+            }
+
+            &.active::before {
+               transform: rotate(45deg);
+               top: 9px;
+            }
+            &.active::after {
+               transform: rotate(-45deg);
+               top: 9px;
+            }
+            &.active span {
+               transform: scale(0);
+            }
+         }
+      }
+   }   
+}
+@media (max-width: $breakpoint768) {
+
+   
+   .navbar {
+      // display: block;
+      align-items: baseline;
+      // position: fixed;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      padding: 20px 0 0 0;
+      // background: #fff;
+      
+      .menu {
+         // position: absolute;
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         top: -125%;
+         left: 0;
+         z-index: 3;
+         flex-direction: column;
+         background: $gray;
+         padding-top: 85px;
+         transition: all .3s ease;
+
+         &.active {
+            top: 0;
+         }
+      }
+      .logo {
+         z-index: 4;
+      }
+   }
+}
